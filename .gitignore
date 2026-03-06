@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Compiled output
+dist/
+build/
+*.js
+*.js.map
+!jest.config.js
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# NOTE: .env is normally ignored, but for this vulnerable app
+# we intentionally commit it to demonstrate exposed secrets
+# .env
