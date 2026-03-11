@@ -143,7 +143,7 @@ app.post('/api/calculate', (req: Request, res: Response) => {
 
 // VULNERABILITY: Missing Authentication (CWE-862)
 app.delete('/api/admin/users/:id', (req: Request, res: Response) => {
-  const id: string = req.params.id;
+  const id: string = req.params.id as string;
   // Vulnerable: No authentication or authorization check!
   const index = users.findIndex((u: User) => u.id === parseInt(id));
   if (index !== -1) {
@@ -156,7 +156,7 @@ app.delete('/api/admin/users/:id', (req: Request, res: Response) => {
 
 // VULNERABILITY: Insecure Direct Object Reference (IDOR) (CWE-639)
 app.get('/api/users/:id', (req: Request, res: Response) => {
-  const id: string = req.params.id;
+  const id: string = req.params.id as string;
   // Vulnerable: No authorization check - any user can view any user's data
   const user = users.find((u: User) => u.id === parseInt(id));
   if (user) {
